@@ -3,12 +3,6 @@ from bs4 import BeautifulSoup
 import unicodedata
 import re
 
-<<<<<<< HEAD
-print("BLABLABLA")
-=======
-print("Hei_haha")
->>>>>>> fe0682bb0691fdd80b24fc370dfdcc2bd8747448
-
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
