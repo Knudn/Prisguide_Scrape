@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import unicodedata
 import re
 import argparse
-
+import crayons
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
@@ -60,6 +60,8 @@ if __name__ == '__main__':
             store = re.findall('<img alt=\"(.*) logo', str(a))
             price = unicodedata.normalize("NFKD",(re.findall(' (.*)</a>', str(a)))[0])
             price = str(price.replace(" ",""))
+
+
             if str(lager_status[0]) != "Ikke på lager":
                 if str(lager_status[0]) == "På lager":
                     lager_status[0] = (bcolors.OKGREEN + lager_status[0] + bcolors.ENDC)
@@ -70,7 +72,7 @@ if __name__ == '__main__':
                 elif str(lager_status[0]) == "Forhåndsbestill":
                     lager_status[0] = (bcolors.OKCYAN + lager_status[0] + bcolors.ENDC)
                 #elif str(lager_status[0]) == "På lager":
-                print("Brand: "+brand[0]," | Lager status: "+ lager_status[0], " | Store: " + store[0], " | Pris: " + price+"kr", b)
+                print("Brand: "+brand[0]," | Lager status: " + lager_status[0], " | Store: " + store[0], " | Pris: " + price+"kr", b)
 
 
 
