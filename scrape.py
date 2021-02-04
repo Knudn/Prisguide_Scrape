@@ -55,24 +55,26 @@ if __name__ == '__main__':
 
 
         for a in soup.find_all("div", class_="shop"):
+            try:
 
-            lager_status = re.findall('<span class=\"quote\">(.*)</span', str(a))
-            store = re.findall('<img alt=\"(.*) logo', str(a))
-            price = unicodedata.normalize("NFKD",(re.findall(' (.*)</a>', str(a)))[0])
-            price = str(price.replace(" ",""))
-
-
-            if str(lager_status[0]) != "Ikke på lager":
-                if str(lager_status[0]) == "På lager":
-                    lager_status[0] = (bcolors.OKGREEN + lager_status[0] + bcolors.ENDC)
-                elif str(lager_status[0]) == "Bekreftet lagerdato":
-                    lager_status[0] = (bcolors.WARNING + lager_status[0] + bcolors.ENDC)
-                elif str(lager_status[0]) == "Kun i butikk":
-                    lager_status[0] = (bcolors.WARNING + lager_status[0] + bcolors.ENDC)
-                elif str(lager_status[0]) == "Forhåndsbestill":
-                    lager_status[0] = (bcolors.OKCYAN + lager_status[0] + bcolors.ENDC)
-                #elif str(lager_status[0]) == "På lager":
-                print("Brand: "+brand[0]," | Lager status: " + lager_status[0], " | Store: " + store[0], " | Pris: " + price+"kr", b)
+                lager_status = re.findall('<span class=\"quote\">(.*)</span', str(a))
+                store = re.findall('<img alt=\"(.*) logo', str(a))
+                price = unicodedata.normalize("NFKD",(re.findall(' (.*)</a>', str(a)))[0])
+                price = str(price.replace(" ",""))
 
 
+                if str(lager_status[0]) != "Ikke på lager":
+                    if str(lager_status[0]) == "På lager":
+                        lager_status[0] = (bcolors.OKGREEN + lager_status[0] + bcolors.ENDC)
+                    elif str(lager_status[0]) == "Bekreftet lagerdato":
+                        lager_status[0] = (bcolors.WARNING + lager_status[0] + bcolors.ENDC)
+                    elif str(lager_status[0]) == "Kun i butikk":
+                        lager_status[0] = (bcolors.WARNING + lager_status[0] + bcolors.ENDC)
+                    elif str(lager_status[0]) == "Forhåndsbestill":
+                        lager_status[0] = (bcolors.OKCYAN + lager_status[0] + bcolors.ENDC)
+                    #elif str(lager_status[0]) == "På lager":
+                    print("Brand: "+brand[0]," | Lager status: " + lager_status[0], " | Store: " + store[0], " | Pris: " + price+"kr", b)
+
+            except:
+                pass
 

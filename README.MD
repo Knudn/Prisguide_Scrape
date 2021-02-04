@@ -11,8 +11,10 @@ pip install requirements.txt
 ```
 ## Example
 
+Remember to use quotes in the URL
+
 ```bash
-python --url https://prisguiden.no/kategorier/grafikkort-gpu
+python --url "https://prisguiden.no/kategorier/grafikkort-gpu"
 ```
 
 ## License
