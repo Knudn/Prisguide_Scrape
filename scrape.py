@@ -73,7 +73,8 @@ if __name__ == '__main__':
                     elif str(lager_status[0]) == "Forhåndsbestill":
                         lager_status[0] = (bcolors.OKCYAN + lager_status[0] + bcolors.ENDC)
                     #elif str(lager_status[0]) == "På lager":
-                    print("Brand: "+brand[0]," | Lager status: " + lager_status[0], " | Store: " + store[0], " | Pris: " + price+"kr", b)
+                    print("{0:^43} | Lager status: {1:^30} | Store: {2:^20} | Pris: {3:^8}   {4}".format(brand[0],lager_status[0],store[0],price,b))
+
 
             except:
                 pass
