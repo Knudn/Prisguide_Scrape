@@ -9,7 +9,11 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install require
 ```bash
 pip install requirements.txt
 ```
+## Example
 
+```bash
+python --url https://prisguiden.no/kategorier/grafikkort-gpu
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
