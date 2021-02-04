@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import unicodedata
 import re
 
-print("ha")
+print("")
 
 class bcolors:
     HEADER = '\033[95m'
