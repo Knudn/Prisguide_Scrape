@@ -14,7 +14,7 @@ pip install requirements.txt
 Remember to use quotes in the URL
 
 ```bash
-python --url "https://prisguiden.no/kategorier/grafikkort-gpu"
+python scrape.py --url "https://prisguiden.no/kategorier/grafikkort-gpu?f[1432][]=Nvidia%20GeForce%20RTX%2030xx&n=99"
 ```
 
 ## License
